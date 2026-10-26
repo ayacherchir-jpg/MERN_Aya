@@ -28,6 +28,11 @@ const userSchema = new mongoose.Schema(
       },
       default: 'user'
     },
+    password: {
+      type: String,
+      required: [true, 'Le mot de passe est obligatoire'],
+      minlength: [6, 'Le mot de passe doit comporter au moins 6 caractères']
+    },
     bio: {
       type: String,
       maxlength: [200, 'La biographie ne peut pas dépasser 200 caractères']
